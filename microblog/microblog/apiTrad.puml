@@ -1,0 +1,37 @@
+
+@startuml
+class ApertiumApiClient {
+    - static final String API_URL
+    - ApertiumApiClient()
+    + static String translate(String text, String sourceLang, String targetLang) throws IOException, InterruptedException
+}
+
+class HttpClient {
+    + send(HttpRequest request, HttpResponse.BodyHandler<T> handler): HttpResponse<T>
+}
+
+class HttpRequest {
+    + newBuilder()
+}
+
+class HttpResponse {
+    + body(): String
+    + statusCode(): int
+}
+
+class Gson {
+    + fromJson(String json, Class<T> classOfT): T
+}
+
+class JsonObject {
+    + getAsJsonObject(String memberName): JsonObject
+    + get(String memberName): JsonElement
+}
+
+ApertiumApiClient --> HttpClient : uses
+ApertiumApiClient --> HttpRequest : creates
+ApertiumApiClient --> HttpResponse : handles
+ApertiumApiClient --> Gson : parses
+Gson --> JsonObject : parses
+
+@enduml

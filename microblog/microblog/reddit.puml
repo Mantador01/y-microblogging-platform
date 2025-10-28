@@ -1,0 +1,22 @@
+@startuml
+class RedditPosts {
+    + static void getPosts(String accessToken, String subreddit, Y model) throws Exception
+}
+
+class RedditAuth {
+    + static String authenticate() throws Exception
+}
+
+class OkHttpClient {
+    + newCall(Request request): Call
+}
+
+class JsonObject {
+    + getAsJsonObject(String memberName): JsonObject
+    + getAsJsonArray(String memberName): JsonArray
+}
+
+RedditPosts --> OkHttpClient : uses
+RedditAuth --> OkHttpClient : uses
+RedditPosts --> JsonObject : parses
+@enduml
