@@ -165,7 +165,7 @@ Username: admin | Password: admin
 
 ## 🧩 Authors
 
-**Alexandre Mantador**  
+**Alexandre COTTIER**  
 Master’s student in Computer Science – *Image, Développement et Technologie 3D (ID3D)*  
 Université Claude Bernard Lyon 1  
 
